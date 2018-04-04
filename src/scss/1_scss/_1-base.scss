@@ -1,0 +1,27 @@
+body {
+    background-color: #f4f4f4;
+    color: rgb(30,30,30);
+    }
+
+header {
+    background-color: rgb(30,30,30);
+    color: rgb(255,255,255);
+    padding: 20px 0;
+    h1 {
+        margin: 20px 0;
+    }
+    a {
+        color: rgb(255,255,255);
+    }
+}
+
+section {
+    padding: 60px 0;
+}
+
+
+
+.wrap {
+    max-width: 1000px;
+    margin: auto;
+}
