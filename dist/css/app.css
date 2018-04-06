@@ -19,6 +19,27 @@ section {
   max-width: 1000px;
   margin: auto; }
 
+/*======= Search Section =======*/
+header {
+  display: flex;
+  justify-content: center; }
+
+button {
+  background-color: #0f0f0f;
+  color: gainsboro;
+  padding: 8px 15px;
+  border: 2px solid grey;
+  border-radius: 3px;
+  font-size: 23px;
+  font-weight: 400; }
+
+input {
+  font-size: 18px;
+  padding: 12px 25px;
+  background-color: #0f0f0f;
+  color: gainsboro;
+  border: none; }
+
 body {
   font-family: 'Inter UI', sans-serif;
   font-size: 14px;

@@ -19,9 +19,31 @@ section {
     padding: 60px 0;
 }
 
-
-
 .wrap {
     max-width: 1000px;
     margin: auto;
+}
+
+
+/*======= Search Section =======*/
+
+header {
+  display: flex;
+  justify-content: center;
+}
+button {
+  background-color: rgb(15,15,15);
+  color: rgb(220,220,220);
+  padding: 8px 15px;
+  border: 2px solid grey;
+  border-radius: 3px;
+  font-size: 23px;
+  font-weight: 400;
+}
+input {
+  font-size: 18px;
+  padding: 12px 25px;
+  background-color: rgb(15,15,15);
+  color: rgb(220,220,220);
+  border: none;
 }
