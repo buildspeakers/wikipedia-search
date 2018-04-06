@@ -1,8 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
     background-color: #f4f4f4;
     color: rgb(30,30,30);
-    }
-
+    overflow-y: scroll;
+}
 header {
     background-color: rgb(30,30,30);
     color: rgb(255,255,255);
@@ -14,11 +18,9 @@ header {
         color: rgb(255,255,255);
     }
 }
-
 section {
-    padding: 60px 0;
+    padding: 10px 0;
 }
-
 .wrap {
     max-width: 1000px;
     margin: auto;
@@ -46,4 +48,21 @@ input {
   background-color: rgb(15,15,15);
   color: rgb(220,220,220);
   border: none;
+}
+
+/*======= Results =======*/
+
+.results {
+  display: flex;
+  flex-flow: row wrap;
+  div {
+    padding: 20px;
+    border: solid 1px rgb(50,50,50);
+    border-radius: 3px;
+    margin: 10px 2%;
+    flex: 0 0 92%;
+    @media(min-width: 768px){
+      flex: 0 0 46%;
+    }
+  }
 }
