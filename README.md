@@ -1,7 +1,5 @@
-## Basic Sassy Gulp Project
+## Wikipedia Search App
 
-1. clone repo
+Based on a free code camp front-end project.
 
-2. npm install
-
-3. gulp
+[View me here](https://buildspeakers.github.io/wikipedia-search/)
