@@ -10385,7 +10385,8 @@ $('#search').submit(function(event){
       let results = data.query.search;
       console.log(results);
       let keys = Object.keys(results);
-      let $resultsElement = document.createElement('div');
+      let $resultsElement = document.createElement('section');
+      $resultsElement.className = 'results';
       for (let i = 0; i < keys.length; i++){
         // create result container
         let $result = document.createElement('div');
@@ -10405,7 +10406,6 @@ $('#search').submit(function(event){
         $result.appendChild(link);
         $resultsElement.appendChild($result);
       }
-
       $('#results').html($resultsElement);
     }
   });

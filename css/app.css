@@ -1,7 +1,11 @@
 @import url("https://rsms.me/inter/inter-ui.css");
+* {
+  box-sizing: border-box; }
+
 body {
   background-color: #f4f4f4;
-  color: #1e1e1e; }
+  color: #1e1e1e;
+  overflow-y: scroll; }
 
 header {
   background-color: #1e1e1e;
@@ -13,11 +17,46 @@ header {
     color: white; }
 
 section {
-  padding: 60px 0; }
+  padding: 10px 0; }
 
 .wrap {
   max-width: 1000px;
   margin: auto; }
+
+/*======= Search Section =======*/
+header {
+  display: flex;
+  justify-content: center; }
+
+button {
+  background-color: #0f0f0f;
+  color: gainsboro;
+  padding: 8px 15px;
+  border: 2px solid grey;
+  border-radius: 3px;
+  font-size: 23px;
+  font-weight: 400; }
+
+input {
+  font-size: 18px;
+  padding: 12px 25px;
+  background-color: #0f0f0f;
+  color: gainsboro;
+  border: none; }
+
+/*======= Results =======*/
+.results {
+  display: flex;
+  flex-flow: row wrap; }
+  .results div {
+    padding: 20px;
+    border: solid 1px #323232;
+    border-radius: 3px;
+    margin: 10px 2%;
+    flex: 0 0 92%; }
+    @media (min-width: 768px) {
+      .results div {
+        flex: 0 0 46%; } }
 
 body {
   font-family: 'Inter UI', sans-serif;
