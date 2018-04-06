@@ -1,0 +1,31 @@
+@import url("https://rsms.me/inter/inter-ui.css");
+body {
+  background-color: #f4f4f4;
+  color: #1e1e1e; }
+
+header {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px 0; }
+  header h1 {
+    margin: 20px 0; }
+  header a {
+    color: white; }
+
+section {
+  padding: 60px 0; }
+
+.wrap {
+  max-width: 1000px;
+  margin: auto; }
+
+body {
+  font-family: 'Inter UI', sans-serif;
+  font-size: 14px;
+  font-feature-settings: "kern" 1, "liga" 1; }
+
+h1 {
+  font-size: 40px;
+  font-weight: 600; }
+
+/*# sourceMappingURL=app.css.map */

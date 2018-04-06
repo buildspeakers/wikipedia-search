@@ -5,6 +5,8 @@ const concat = require('gulp-concat');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
+const ghPages = require('gulp-gh-pages');
+
 
 // compile sass
 gulp.task('compileSass', () => {
@@ -61,4 +63,10 @@ gulp.task('browserSync', () => {
 gulp.task('default', ['compileSass', 'concatJs'], (done) => {
     gulp.start('watchFiles');
     gulp.start('browserSync');
+});
+
+// deploy to github pages
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
