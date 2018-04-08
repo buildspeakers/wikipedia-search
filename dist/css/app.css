@@ -1,11 +1,13 @@
 @import url("https://rsms.me/inter/inter-ui.css");
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: none; }
 
 body {
-  background-color: #f4f4f4;
+  background-color: black;
   color: #1e1e1e;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 header {
   background-color: #1e1e1e;
@@ -15,9 +17,6 @@ header {
     margin: 20px 0; }
   header a {
     color: white; }
-
-section {
-  padding: 10px 0; }
 
 .wrap {
   max-width: 1000px;
@@ -49,9 +48,8 @@ input {
   display: flex;
   flex-flow: row wrap; }
   .results .result {
-    border: solid 1px #8c8c8c;
+    background-color: #1e1e1e;
     border-radius: 3px;
-    padding: 20px;
     margin: 10px 2%;
     flex: 0 0 92%;
     opacity: 0;
@@ -59,17 +57,37 @@ input {
     @media (min-width: 768px) {
       .results .result {
         flex: 0 0 46%; } }
+    .results .result .frame {
+      position: relative;
+      margin: 0; }
+      .results .result .frame h3 {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+        text-shadow: 3px 3px 2px black;
+        margin: 0; }
     .results .result img {
+      border-radius: 3px 3px 0 0;
       max-width: 100%;
+      margin: 0;
       filter: grayscale(40%);
-      transition: filter 1s; }
+      transition: filter 0.3s; }
     .results .result:hover img {
       filter: grayscale(0%); }
 
+figcaption {
+  color: white;
+  padding: 20px; }
+  figcaption p {
+    margin-bottom: 20px; }
+  figcaption .searchmatch {
+    color: red; }
+
 h3 {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 600;
-  letter-spacing: -2px; }
+  letter-spacing: -1px; }
 
 body {
   font-family: 'Inter UI', sans-serif;

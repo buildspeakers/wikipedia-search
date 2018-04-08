@@ -1,6 +1,6 @@
 let tl = new TimelineMax();
 
-// event listener for form
+// send req
 $('#search').submit(function(event){
   let $searchText = document.querySelector('#searchField').value;
   event.preventDefault();
@@ -17,33 +17,36 @@ $('#search').submit(function(event){
     dataFormat: 'json',
     success: function(data){
       let results = data.query.search;
-      let keys = Object.keys(results);
       let resultFigures = [];
-      for (let i = 0; i < keys.length; i++){
+      for (let i = 0; i < results.length; i++){
+        let fullSnippet;
+        if (results[i].snippet[0] !== results[i].snippet[0].toUpperCase() ) {
+          fullSnippet = '....' + results[i].snippet;
+        }
+        else fullSnippet = results[i].snippet;
         resultFigures.push(`
           <figure class="result">
-            <img src="moose.jpg">
-            <h3>${results[i].title}</h3>
+            <div class="frame">
+              <img src="moose.jpg">
+              <h3>${results[i].title}</h3>
+            </div>
             <figcaption>
-              <p>${results[i].snippet}</p>
+              <p>${fullSnippet}</p>
               <a target="_blank" href="https://en.wikipedia.org/wiki/${results[i].title}">Full Article</a>
             </figcaption>
           </figure>`);
       };
-
       let target = document.querySelector('#results');
-
+      // build string
       let allFigures = '';
-      for (let i = 0; i < resultFigures.length; i++) {
+      for (let i = 1; i < resultFigures.length; i++) {
         allFigures += resultFigures[i];
       };
-      // insert into DOM
+      // write to DOM
       target.innerHTML = allFigures;
 
       // fade in one by one
-      let resultsArray = Array.from(document.querySelector('#results').querySelectorAll('.result'));
-      console.log(document.querySelector('#results').querySelectorAll('.result'));
-      console.log(resultsArray);
+      let resultsArray = Array.from(document.querySelectorAll('.result'));
       tl.staggerTo(resultsArray, 0.2, { // 0.05 = length of each animation event
         opacity: 1,
         x: 0,
