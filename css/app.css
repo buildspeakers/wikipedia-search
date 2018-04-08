@@ -55,10 +55,15 @@ input {
     margin: 10px 2%;
     flex: 0 0 92%;
     opacity: 0;
-    transform: translateX(10px); }
+    transform: translateX(500px); }
     @media (min-width: 768px) {
       .results .result {
         flex: 0 0 46%; } }
+
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -2px; }
 
 body {
   font-family: 'Inter UI', sans-serif;
