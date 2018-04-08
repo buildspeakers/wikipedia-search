@@ -10384,28 +10384,26 @@ $('#search').submit(function(event){
     success: function(data){
       let results = data.query.search;
       let keys = Object.keys(results);
-      let $resultsElement = document.createElement('section');
-      $resultsElement.className = 'results';
+      let resultFigures = [];
       for (let i = 0; i < keys.length; i++){
-        // create result container
-        let $result = document.createElement('div');
-        $result.className = 'result';
-        // create result text elements
-        let title = document.createElement('h3');
-        let snip = document.createElement('p');
-        let link = document.createElement('a');
-        // add data from response
-        title.innerHTML = results[i].title;
-        snip.innerHTML = results[i].snippet;
-        link.innerHTML = 'Read More';
-        link.setAttribute('href', `https://en.wikipedia.org/wiki/${results[i].title}`);
-        // append elements
-        $result.appendChild(title);
-        $result.appendChild(snip);
-        $result.appendChild(link);
-        $resultsElement.appendChild($result);
-      }
-      $('#results').html($resultsElement);
+        resultFigures.push(`
+          <figure class="result">
+            <h3>${results[i].title}</h3>
+            <figcaption>
+              <p>${results[i].snippet}</p>
+              <a target="_blank" href="https://en.wikipedia.org/wiki/${results[i].title}">Full Article</a>
+            </figcaption>
+          </figure>`);
+      };
+
+      let target = document.querySelector('#results');
+
+      let allFigures = '';
+      for (let i = 0; i < resultFigures.length; i++) {
+        allFigures += resultFigures[i];
+      };
+      // insert into DOM
+      target.innerHTML = allFigures;
 
       // fade in one by one
       let resultsArray = Array.from(document.querySelector('#results').querySelectorAll('.result'));
@@ -10414,9 +10412,8 @@ $('#search').submit(function(event){
       tl.staggerTo(resultsArray, 0.2, { // 0.05 = length of each animation event
         opacity: 1,
         x: 0,
-      }, 0.05)
+      }, 0.05);
 
-    }
-
-  });
-})
+    } // end success
+  }); // end AJAX
+}); // end form submit
