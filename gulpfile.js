@@ -25,6 +25,7 @@ gulp.task('concatJs', () => {
   return gulp.src([
     // libs eg.
     'node_modules/jQuery/dist/jquery.js',
+    'node_modules/gsap/TimelineMax.js',
     // My js
     'src/js/app.js'
   ])
