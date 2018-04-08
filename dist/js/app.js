@@ -10368,7 +10368,6 @@ let tl = new TimelineMax();
 // event listener for form
 $('#search').submit(function(event){
   let $searchText = document.querySelector('#searchField').value;
-  console.log($searchText);
   event.preventDefault();
   let $formData = {
     action: 'query',
@@ -10384,7 +10383,6 @@ $('#search').submit(function(event){
     dataFormat: 'json',
     success: function(data){
       let results = data.query.search;
-      console.log(results);
       let keys = Object.keys(results);
       let $resultsElement = document.createElement('section');
       $resultsElement.className = 'results';
@@ -10410,9 +10408,12 @@ $('#search').submit(function(event){
       $('#results').html($resultsElement);
 
       // fade in one by one
-      tl.staggerTo(".result", 0.3, { // 0.05 = length of each animation event
+      let resultsArray = Array.from(document.querySelector('#results').querySelectorAll('.result'));
+      console.log(document.querySelector('#results').querySelectorAll('.result'));
+      console.log(resultsArray);
+      tl.staggerTo(resultsArray, 0.2, { // 0.05 = length of each animation event
         opacity: 1,
-        y: 0,
+        x: 0,
       }, 0.05)
 
     }
