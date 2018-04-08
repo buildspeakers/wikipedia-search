@@ -55,14 +55,16 @@ input {
 .results {
   display: flex;
   flex-flow: row wrap;
-  div {
-    padding: 20px;
-    border: solid 1px rgb(50,50,50);
+  .result {
+    border: solid 1px rgb(140,140,140);
     border-radius: 3px;
+    padding: 20px;
     margin: 10px 2%;
     flex: 0 0 92%;
     @media(min-width: 768px){
       flex: 0 0 46%;
     }
+    opacity: 0;
+    transform: translateX(10px);
   }
 }
