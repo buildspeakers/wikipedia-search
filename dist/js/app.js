@@ -10369,17 +10369,16 @@ let tl = new TimelineMax();
 $('#search').submit(function(event){
   let $searchText = document.querySelector('#searchField').value;
   event.preventDefault();
-  let $formData = {
+  let formData = {
     action: 'query',
-    // get round cross origin request being blocked
-    origin: '*',
+    origin: '*', // get round cross origin request being blocked
     list: 'search',
     srsearch: $searchText,
     format: 'json',
   }
   $.ajax({
     url: "https://en.wikipedia.org/w/api.php",
-    data: $formData,
+    data: formData,
     dataFormat: 'json',
     success: function(data){
       let results = data.query.search;
@@ -10388,6 +10387,7 @@ $('#search').submit(function(event){
       for (let i = 0; i < keys.length; i++){
         resultFigures.push(`
           <figure class="result">
+            <img src="moose.jpg">
             <h3>${results[i].title}</h3>
             <figcaption>
               <p>${results[i].snippet}</p>

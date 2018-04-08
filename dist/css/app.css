@@ -59,6 +59,12 @@ input {
     @media (min-width: 768px) {
       .results .result {
         flex: 0 0 46%; } }
+    .results .result img {
+      max-width: 100%;
+      filter: grayscale(40%);
+      transition: filter 1s; }
+    .results .result:hover img {
+      filter: grayscale(0%); }
 
 h3 {
   font-size: 30px;
@@ -73,5 +79,8 @@ body {
 h1 {
   font-size: 40px;
   font-weight: 600; }
+
+p {
+  line-height: 1.6; }
 
 /*# sourceMappingURL=app.css.map */
