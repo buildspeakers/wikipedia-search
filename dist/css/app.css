@@ -50,13 +50,18 @@ input {
   .results .result {
     background-color: #1e1e1e;
     border-radius: 3px;
-    margin: 10px 2%;
-    flex: 0 0 92%;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex: 0 0 90%;
     opacity: 0;
     transform: translateX(500px); }
     @media (min-width: 768px) {
       .results .result {
-        flex: 0 0 46%; } }
+        flex: 0 0 42.5%;
+        margin-left: 5%;
+        margin-right: 0;
+        margin-top: 30px; } }
     .results .result .frame {
       position: relative;
       margin: 0; }
@@ -71,8 +76,10 @@ input {
       border-radius: 3px 3px 0 0;
       max-width: 100%;
       margin: 0;
-      filter: grayscale(40%);
       transition: filter 0.3s; }
+      @media (min-width: 768px) {
+        .results .result img {
+          filter: grayscale(40%); } }
     .results .result:hover img {
       filter: grayscale(0%); }
 
@@ -86,7 +93,7 @@ figcaption {
 
 h3 {
   font-size: 35px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -1px; }
 
 body {

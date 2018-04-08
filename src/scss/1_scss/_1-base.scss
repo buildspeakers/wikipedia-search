@@ -57,10 +57,15 @@ input {
   .result {
     background-color: rgb(30,30,30);
     border-radius: 3px;
-    margin: 10px 2%;
-    flex: 0 0 92%;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex: 0 0 90%;
     @media(min-width: 768px){
-      flex: 0 0 46%;
+      flex: 0 0 42.5%;
+      margin-left: 5%;
+      margin-right: 0;
+      margin-top: 30px;
     }
     opacity: 0;
     transform: translateX(500px);
@@ -80,8 +85,9 @@ input {
       border-radius: 3px 3px 0 0;
       max-width: 100%;
       margin: 0;
-      filter: grayscale(40%);
-      transition: filter 0.3s;
+      transition: filter 0.3s;@media(min-width: 768px){
+        filter: grayscale(40%);
+      }
     }
     &:hover {
       img {
@@ -105,6 +111,6 @@ figcaption {
 
 h3 {
   font-size: 35px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -1px;
 }
