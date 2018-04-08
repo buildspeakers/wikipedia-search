@@ -48,15 +48,22 @@ input {
 .results {
   display: flex;
   flex-flow: row wrap; }
-  .results div {
-    padding: 20px;
-    border: solid 1px #323232;
+  .results .result {
+    border: solid 1px #8c8c8c;
     border-radius: 3px;
+    padding: 20px;
     margin: 10px 2%;
-    flex: 0 0 92%; }
+    flex: 0 0 92%;
+    opacity: 0;
+    transform: translateX(500px); }
     @media (min-width: 768px) {
-      .results div {
+      .results .result {
         flex: 0 0 46%; } }
+
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -2px; }
 
 body {
   font-family: 'Inter UI', sans-serif;
